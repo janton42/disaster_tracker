@@ -25,10 +25,10 @@ def main():
     time = now.strftime("%H:%M:%S")
 
     affected = generate_affected_list()
-    # if red == 0:
-    # 	print()
-    # 	print('No alert level "Red" disasters recorded.\n')
-    if len(affected) == 1:
+    if red == 0:
+    	print()
+    	print('No alert level "Red" disasters recorded.\n')
+    elif len(affected) == 1:
         print()
         print('There are no TIP freelancers affected by alert level "Red" natural disasters.\n', affected)
     else:
