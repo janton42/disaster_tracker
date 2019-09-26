@@ -7,15 +7,14 @@ __author__ = "Jeff Stock"
 __version__ = "0.1.0"
 __license__ = "GNU GENERAL PUBLIC LICENSE"
 
-from file_reader import us_based
-from scraper import disasters
-from comparison import affected
+
+from comparison import generator
 
 def main():
     """ Main entry point of the app """
 
-    print(len(affected))
-    print(affected)
+    print(len(generator))
+    print(generator)
 
     # print(disasters.get(10))
 
