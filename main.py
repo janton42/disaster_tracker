@@ -10,32 +10,38 @@ __license__ = "GNU GENERAL PUBLIC LICENSE"
 
 from comparison import generator
 from scraper import counts
+from datetime import datetime
+from file_writer import create_action_list
 
 def main():
     """ Main entry point of the app """
     red = counts['red']
     orange = counts['orange']
     green = counts['green']
+    
+    now = datetime.now()
+    date = now.strftime("%Y/%m/%d")
+    time = now.strftime("%H:%M:%S")
 
     if red == 0:
-    	print('No alert level "Red" disasters recorded.')
+    	print()
+    	print('No alert level "Red" disasters recorded.\n')
     elif len(affected) == 0:
-    	print('There are no TIP freelancers affected by alert level "Red" natural disasters.')
+    	print()
+    	print('There are no TIP freelancers affected by alert level "Red" natural disasters.\n')
     else:
-    	print('Number of TIP freelancers possibly affected by a alert level "Red" natural disaster')
-    	print(len(generator))
+    	print('Number of TIP freelancers possibly affected by a alert level "Red" natural disaster: ', len(generator))
+    	create_action_list()
+    	
+    if red > 0:
+    	print('Total Red alerts:', red, '\n')
+    print('Total Orange alerts: ', orange, '\n')
+    print('Total Green alerts: ', green,'\n')
 
-    print("Total Red alerts:")
-    print(red)
-    print("Total Orange alerts:")
-    print(orange)
-    print("Total Green alerts:")
-    print(green)
+    print('Search conducted date: ', date, '\n')
+    print('Search conductad time: ', time, '\n')
 
 
-    # print(disasters.get(10))
-
-    
 
 
 if __name__ == "__main__":
