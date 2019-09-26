@@ -42,7 +42,7 @@ def location_compiler():
 
 	return  location_data_all
 
-fl_locations = location_compiler()
+
 
 
 # for i in location_data_all:

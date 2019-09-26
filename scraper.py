@@ -122,5 +122,3 @@ def counts():
 
 	return totals
 
-disasters = scrape()
-counts = counts()
