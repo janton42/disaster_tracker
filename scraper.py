@@ -11,9 +11,6 @@ def scrape():
 	disasters = {}
 	counter = 0
 
-	total_red = 0
-	# total_orange = 0
-	# total_green = 0
 
 	url = 'http://www.gdacs.org/XML/RSS.xml'
 	resp = requests.get(url)
@@ -22,9 +19,10 @@ def scrape():
 
 
 	for i in items:
-		resources.append(i.resources.findAll('resource'))
-	  # if i.find('alertlevel').text == 'Red':
-	    # total_red += 1
+		alert_level = i.find('alertlevel').text
+
+		if alert_level == 'Red':
+			resources.append(i.resources.findAll('resource'))
 
 	impact_xmls = []
 	impact_data = []
@@ -93,4 +91,36 @@ def scrape():
 	
 	return disasters
 
+def counts():
+
+	totals = {}
+
+	total_red = 0
+	total_orange = 0
+	total_green = 0
+
+	url = 'http://www.gdacs.org/XML/RSS.xml'
+	resp = requests.get(url)
+	soup = BeautifulSoup(resp.content, features="xml")
+	items = soup.findAll('item')
+
+
+	for i in items:
+		alert_level = i.find('alertlevel').text
+
+		if alert_level == 'Red':
+			resources.append(i.resources.findAll('resource'))
+			total_red += 1
+		elif alert_level == 'Orange':
+			total_orange += 1
+		elif alert_level == 'Green':
+			total_green += 1
+
+	totals['red'] = total_red
+	totals['orange'] = total_orange
+	totals['green'] = total_green
+
+	return totals
+
 disasters = scrape()
+counts = counts()
