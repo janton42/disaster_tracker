@@ -42,11 +42,6 @@ def location_compiler():
 
 	return  location_data_all
 
-def create_action_list():
-    with open('./static/affected.csv', 'w') as csvFile:
-        writer = csv.writer(csvFile)
-        writer.writerows(outreach_list)
-
 fl_locations = location_compiler()
 
 
