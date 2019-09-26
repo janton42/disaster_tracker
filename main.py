@@ -15,7 +15,7 @@ def main():
     nation = test['country']
     print(nation)
     print(len(us_based))
-    print(us_based)
+    print(us_based[5])
 
     
 
