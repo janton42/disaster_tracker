@@ -8,6 +8,7 @@ __version__ = "0.1.0"
 __license__ = "GNU GENERAL PUBLIC LICENSE"
 
 from file_reader import location_data_all, us_based
+from scraper import disasters
 
 def main():
     """ Main entry point of the app """
@@ -16,6 +17,8 @@ def main():
     print(nation)
     print(len(us_based))
     print(us_based[5])
+
+    print(disasters.get(10))
 
     
 
