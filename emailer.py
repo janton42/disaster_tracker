@@ -43,7 +43,7 @@ message["Subject"] = subject
 # Add body to email
 message.attach(MIMEText(body, "plain"))
 
-filename = "./static/test.txt"  # In same directory as script
+filename = "./static/affected.csv"  # In same directory as script
 
 # Open PDF file in binary mode
 with open(filename, "rb") as attachment:
