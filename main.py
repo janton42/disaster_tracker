@@ -12,7 +12,7 @@ from scraper import counts
 from datetime import datetime
 from file_writer import create_action_list
 from comparison import generate_affected_list
-from emailer import send_email
+# from emailer import send_email
 
 def main():
     """ Main entry point of the app """
@@ -50,7 +50,7 @@ def main():
     body = 'Total Red alerts: ' + repr(red) + '\n' + '\n' + 'Total Orange alerts: ' + repr(orange) + '\n' + '\n' + 'Total Green alerts: ' + repr(green) + '\n' + '\n' + 'Search date ' + repr(date) + '\n' + '\n' + 'Search time' + repr(time)
 
     print(body)
-    send_email(subject, body)
+    # send_email(subject, body)
 
 
 

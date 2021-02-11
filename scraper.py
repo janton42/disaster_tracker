@@ -5,9 +5,10 @@ import lxml
 import requests
 import re
 
+resources = []
 def scrape():
 
-	resources = []
+	
 	disasters = {}
 	counter = 0
 
