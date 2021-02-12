@@ -5,7 +5,6 @@ import csv
 # def test(arg):
 # 	print(f'arg = {arg}')
 
-# thing = test("Hello World!")
 def location_compiler():
 	location_data_all = {}
 	loc_data_counter = 0
@@ -42,20 +41,3 @@ def location_compiler():
 
 	return  location_data_all
 
-
-
-
-# for i in location_data_all:
-# 	single_loc = location_data_all[i]
-# 	nation = single_loc['country']
-# 	if nation == 'United States':
-# 		us_based.append(single_loc)
-
-
-
-
-
-# countries_list = csv.reader(open('/Users/jeffstock/Desktop/Disaster/countries.csv', 'r'))
-# countries = {}
-# for k, v in countries_list:
-#   countries[k] = v
