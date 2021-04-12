@@ -20,16 +20,17 @@ def scrape():
 	items = makeSoup(mainUrl).findAll('item')
 	for i in items:
 		alert_level = i.find('alertlevel').text
-		if alert_level == 'Red':
+		if alert_level == 'Red' or alert_level == 'Orange':
 			resources.append(i.resources.findAll('resource'))
 	impact_xmls = []
 	impact_data = []
 	for r in resources:
-	  for i in r:
-	    if i['id'] == 'impact_xml':
-	      impact_xmls.append(i['url'])
-	    elif i['id'] == 'impact_data':
-	      impact_data.append(i['url'])
+		for i in r:
+			print(i['id'])
+			if i['id'] == 'impact_xml':
+				impact_xmls.append(i['url'])
+			elif i['id'] == 'impact_data':
+				impact_data.append(i['url'])
 	xml_calculations = []
 	xml_contentdata = []
 	for xml in impact_xmls:
